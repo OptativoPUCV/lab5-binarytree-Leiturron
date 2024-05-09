@@ -64,7 +64,7 @@ void insertTreeMap(TreeMap * tree, void* key, void * value)
                 if(aux->left == NULL)
                 {
                     aux->left = element;
-                    element->parent = aux;
+                    aux->left->parent = aux;
                     break;
                 }
                 aux = aux->left;
@@ -74,7 +74,7 @@ void insertTreeMap(TreeMap * tree, void* key, void * value)
                 if(aux->right == NULL)
                 {
                     aux->right = element;
-                    element->parent = aux;
+                    aux->right->parent = aux;
                     break;
                 }
                 aux = aux->right;
