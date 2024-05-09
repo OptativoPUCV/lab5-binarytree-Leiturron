@@ -79,6 +79,10 @@ void insertTreeMap(TreeMap * tree, void* key, void * value)
                 }
                 aux = aux->right;
             }
+            else if((int*)key == (int*)aux->pair->key)
+            {
+                aux->pair->value = value;
+            }
         }
         
     }
