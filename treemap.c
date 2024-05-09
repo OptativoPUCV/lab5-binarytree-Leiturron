@@ -67,7 +67,7 @@ void insertTreeMap(TreeMap * tree, void* key, void * value)
                     element->parent = aux;
                     break;
                 }
-                break;
+                aux = aux->left;
             }
             else if(key > aux->pair->key)
             {
@@ -77,7 +77,7 @@ void insertTreeMap(TreeMap * tree, void* key, void * value)
                     element->parent = aux;
                     break;
                 }
-                break;
+                aux = aux->right;
             }
         }
         
