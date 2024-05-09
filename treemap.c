@@ -190,8 +190,9 @@ Pair * upperBound(TreeMap * tree, void* key) {
     return NULL;
 }
 
-Pair * firstTreeMap(TreeMap * tree) {
-    return NULL;
+Pair * firstTreeMap(TreeMap * tree) 
+{
+    return minimum(tree->root)->pair;
 }
 
 Pair * nextTreeMap(TreeMap * tree) {
