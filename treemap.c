@@ -120,6 +120,30 @@ void removeNode(TreeMap * tree, TreeNode* node)
             node->pair = aux->pair;
             removeNode(tree, aux);
         }
+        else if(node->left != NULL)
+        {
+            if(tree->lower_than(node->pair->key, node->parent->pair->key))
+            {
+                node->parent->left = node->left;
+            }
+            else
+            {
+                node->parent->right = node->left;
+            }
+            free(node);
+        }
+        else if(node->right != NULL)
+        {
+            if(tree->lower_than(node->pair->key, node->parent->pair->key))
+            {
+                node->parent->left = node->right;
+            }
+            else
+            {
+                node->parent->right = node->right;
+            }
+            free(node);
+        }
     }
 }
 
