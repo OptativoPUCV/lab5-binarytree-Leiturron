@@ -112,7 +112,15 @@ void removeNode(TreeMap * tree, TreeNode* node)
             node->parent->right = NULL;
         free(node);
     }
-
+    else if(node->left != NULL || node->right != NULL)
+    {
+        if(node->left != NULL && node->right != NULL)
+        {
+            TreeNode *aux = minimum(node->right);
+            node->pair = aux->pair;
+            removeNode(tree, aux);
+        }
+    }
 }
 
 void eraseTreeMap(TreeMap * tree, void* key){
